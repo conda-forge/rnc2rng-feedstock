@@ -1,11 +1,11 @@
-About rnc2rng
-=============
+About rnc2rng-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rnc2rng-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/djc/rnc2rng
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rnc2rng-feedstock/blob/main/LICENSE.txt)
 
 Summary: RELAX NG Compact to regular syntax conversion library
 
@@ -13,10 +13,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=15687&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rnc2rng-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/rnc2rng-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/rnc2rng-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -39,17 +40,87 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `rnc2rng` can be installed with:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install rnc2rng
 ```
 
-It is possible to list all of the versions of `rnc2rng` available on your platform with:
+</details>
+
+<details>
+<summary>With mamba</summary>
+
+```
+mamba install rnc2rng
+```
+
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add rnc2rng
+# for installing globally
+pixi global install rnc2rng
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `rnc2rng` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search rnc2rng --channel conda-forge
 ```
+
+</details>
+
+<details>
+<summary>With mamba</summary>
+
+```
+mamba search rnc2rng --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search rnc2rng --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
+
+```
+# Search all versions available on your platform:
+mamba repoquery search rnc2rng --channel conda-forge
+
+# List packages depending on `rnc2rng`:
+mamba repoquery whoneeds rnc2rng --channel conda-forge
+
+# List dependencies of `rnc2rng`:
+mamba repoquery depends rnc2rng --channel conda-forge
+```
+
+</details>
+
 
 
 About conda-forge
@@ -66,17 +137,17 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/) and [GitHub](https://github.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -103,7 +174,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/rnc2rng-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:

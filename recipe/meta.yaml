@@ -1,13 +1,13 @@
 {% set name = "rnc2rng" %}
-{% set version = "2.6.6" %}
+{% set version = "2.8.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rnc2rng-{{ version }}.tar.gz
-  sha256: 5a01d157857b5f010a94167e7092cc49efe2531d58e013f12c4e60b8c4df78f1
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/rnc2rng-{{ version }}.tar.gz
+  sha256: e6213f96dc88f0b499b281f038a53ed6dc1f21dae8bf822b9fdee9406468a2a6
 
 build:
   entry_points:
